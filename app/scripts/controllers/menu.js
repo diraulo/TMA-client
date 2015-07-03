@@ -12,4 +12,11 @@ app.controller('MenuController', function($scope, Menu, Basket) {
     $scope.menus = response;
   });
   $scope.basket = Basket;
+
+  $scope.isVisible = function(menu) {
+    var now = new Date('2015-07-07');
+    var menuEndDate = new Date(menu.end_date);
+    if (menuEndDate >= now) { return true; }
+    return false;
+  };
 });
