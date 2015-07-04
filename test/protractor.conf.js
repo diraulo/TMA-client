@@ -5,7 +5,9 @@ exports.config = {
 
   // Capabilities to be passed to the webdriver instance.
   capabilities: {
-    'browserName': 'phantomjs'
+    browserName: 'phantomjs',
+    version: '',
+    platform: 'ANY'
   },
 
   // Spec patterns are relative to the current working directly when
@@ -13,6 +15,10 @@ exports.config = {
   specs: [
     'e2e/features/*.feature'
   ],
+
+  jasmineNodeOpts: {
+    showColors: true
+  },
 
   baseUrl: 'http://localhost:9000',
   getPageTimeout: 30000,
